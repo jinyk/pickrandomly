@@ -11,3 +11,5 @@ TODO
 * history, don't repeat
 
 * weights for items
+
+* use geolocation and foursquare list to randomly pick a place to eat
