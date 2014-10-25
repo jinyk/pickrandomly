@@ -1,5 +1,13 @@
 <p id="notice"><%= notice %></p>
 
+<% if @group.items.empty? %>
+  <h1>No items in this group yet.</h1>
+<% else %>
+  <h1>Randomly selected: <%= @group.items.sample.name %></h1>
+<% end %>
+
+<hr>
+
 <p>
   <strong>Name:</strong>
   <%= @group.name %>
@@ -16,9 +24,26 @@
 </p>
 
 <p>
-  <strong>Password:</strong>
-  <%= @group.password %>
+  <strong>Items in this group:</strong>
+  <ul>
+    <% @group.items.each do |item| %>
+      <li>
+        <%= item.name %>
+        <%= link_to 'Destroy', group_item_path(@group, item), method: :delete, data: { confirm: 'Are you sure?' } %>
+      </li>
+    <% end %>
+  </ul>
 </p>
 
-<%= link_to 'Edit', edit_group_path(@group) %> |
-<%= link_to 'Back', groups_path %>
+<%= form_for([@group, @group.items.build]) do |f| %>
+  <%= f.hidden_field :group_id %>
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+
+<%= link_to 'Edit', edit_group_path(@group) %>
