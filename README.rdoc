@@ -13,3 +13,5 @@ TODO
 * weights for items
 
 * use geolocation and foursquare list to randomly pick a place to eat
+
+* confirmation on whether the select item was chosen. E.g. Yes, I ate this lunch spot. Yes, this engineer was available for a code review. So that we can implement the don't repeat option.
