@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @group.name %>
+</p>
+
+<p>
+  <strong>Slug:</strong>
+  <%= @group.slug %>
+</p>
+
+<p>
+  <strong>Publically listed:</strong>
+  <%= @group.publically_listed %>
+</p>
+
+<p>
+  <strong>Password:</strong>
+  <%= @group.password %>
+</p>
+
+<%= link_to 'Edit', edit_group_path(@group) %> |
+<%= link_to 'Back', groups_path %>
