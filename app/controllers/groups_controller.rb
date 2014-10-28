@@ -1,5 +1,5 @@
 class GroupsController < ApplicationController
-  before_action :set_group, only: [:show, :edit, :update, :destroy]
+  before_action :set_group, only: [:show, :edit, :update, :destroy, :subsets]
 
   # GET /groups
   # GET /groups.json
@@ -11,6 +11,11 @@ class GroupsController < ApplicationController
   # GET /groups/1
   # GET /groups/1.json
   def show
+  end
+
+  def subsets
+    @numparts = params[:numparts].to_i
+    @shuffled_group = @group.items.shuffle
   end
 
   # GET /groups/new

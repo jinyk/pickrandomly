@@ -5,6 +5,7 @@ Rails.application.routes.draw do
     resources :items
   end
 
+  get ':group_slug/into/:numparts' => 'groups#subsets'
   get ':group_slug' => 'groups#show'
 
   # Example of regular route:

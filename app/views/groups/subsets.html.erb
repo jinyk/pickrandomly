@@ -1,0 +1,16 @@
+<p id="notice"><%= notice %></p>
+
+<% if @group.items.empty? %>
+  <h1>No items in this group yet.</h1>
+<% else %>
+  <table>
+    <tr>
+      <% @shuffled_group.each_with_index do |item, i| %>
+        <td><%= item.name %></td>
+        <% if ((i + 1)  % @numparts) == 0 %>
+          </tr><tr>
+        <% end %>
+      <% end %>
+    </tr>
+  </table>
+<% end %>
