@@ -21,7 +21,7 @@
     <%= f.check_box :publically_listed, {checked: true} %>
     <%= f.label :publically_listed, class: 'pr-form__checkbox-label' %>
   </div>
-  <div class="pr-form__field">
+  <div class="pr-form__field js-password" style="display: none;">
     <%= f.text_field :password, placeholder: 'password' %>
   </div>
   <div class="pr-form__submit actions">
