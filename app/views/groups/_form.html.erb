@@ -1,4 +1,4 @@
-<%= form_for(@group) do |f| %>
+<%= form_for @group, html: { class: 'pr-form' } do |f| %>
   <% if @group.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@group.errors.count, "error") %> prohibited this group from being saved:</h2>
@@ -11,23 +11,20 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
+  <div class="pr-form__field">
+    <%= f.text_field :name, placeholder: 'group name' %>
   </div>
-  <div class="field">
-    <%= f.label :slug %><br>
-    <%= f.text_field :slug %>
+  <div class="pr-form__field">
+    <%= f.text_field :slug, placeholder: 'group slug' %>
   </div>
-  <div class="field">
-    <%= f.label :publically_listed %><br>
-    <%= f.check_box :publically_listed %>
+  <div class="pr-form__field--checkbox js-public">
+    <%= f.check_box :publically_listed, {checked: true} %>
+    <%= f.label :publically_listed, class: 'pr-form__checkbox-label' %>
   </div>
-  <div class="field">
-    <%= f.label :password %><br>
-    <%= f.text_field :password %>
+  <div class="pr-form__field js-password" style="display: none;">
+    <%= f.text_field :password, placeholder: 'password' %>
   </div>
-  <div class="actions">
+  <div class="pr-form__submit actions">
     <%= f.submit %>
   </div>
 <% end %>

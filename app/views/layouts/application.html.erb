@@ -7,7 +7,11 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
+<div class="pr-topbar">
+  <h1 class="pr-topbar__header">
+    <%= link_to 'Pickrandomly', root_path %>
+  </h1>
+</div>
 <%= yield %>
 
 </body>

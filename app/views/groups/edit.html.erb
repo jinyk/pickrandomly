@@ -1,6 +1,9 @@
-<h1>Editing group</h1>
+<h2 class="pr-page-header">edit <%= @group.name %></h2>
 
 <%= render 'form' %>
 
-<%= link_to 'Show', @group %> |
-<%= link_to 'Back', groups_path %>
+<div class="pr-page-header">
+  <%= link_to "back to #{@group.name}", @group %>
+  <%= link_to 'back to all groups', groups_path %>
+</div>
+
