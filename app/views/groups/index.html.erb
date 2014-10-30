@@ -1,9 +1,8 @@
-<h1>Listing groups</h1>
+<h2 class='pr-page-header'>create a group to choose from</h2>
 
 <%= render 'form' %>
 
-<hr>
-
+<h2 class='pr-page-header'>existing groups</h2>
 <% @groups.each do |group| %>
-  <%= link_to group.name, group %> <%= link_to 'Edit', edit_group_path(group) %> <%= link_to 'Destroy', group, method: :delete, data: { confirm: 'Are you sure?' } %>
+  <%= link_to group.name, group, class: 'pr-existing' %>
 <% end %>

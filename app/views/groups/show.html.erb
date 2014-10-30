@@ -1,49 +1,39 @@
 <p id="notice"><%= notice %></p>
 
 <% if @group.items.empty? %>
-  <h1>No items in this group yet.</h1>
+  <h2 class="pr-page-header">No items in this group yet.</h2>
 <% else %>
-  <h1>Randomly selected: <%= @group.items.sample.name %></h1>
+  <h2 class="pr-page-header">randomly selected from <em><%= @group.name %></em></h2>
+  <span class="pr-randomly-selected-item"><%= @group.items.sample.name %></span>
 <% end %>
 
-<hr>
 
-<p>
-  <strong>Name:</strong>
-  <%= @group.name %>
-</p>
-
-<p>
-  <strong>Slug:</strong>
-  <%= @group.slug %>
-</p>
-
-<p>
-  <strong>Publically listed:</strong>
-  <%= @group.publically_listed %>
-</p>
-
-<p>
-  <strong>Items in this group:</strong>
-  <ul>
+<h2 class="pr-page-header">items in this group</h2>
+  <% if @group.items %>
     <% @group.items.each do |item| %>
-      <li>
+      <div class="pr-existing">
         <%= item.name %>
-        <%= link_to 'Destroy', group_item_path(@group, item), method: :delete, data: { confirm: 'Are you sure?' } %>
-      </li>
+        <%= link_to 'delete item', group_item_path(@group, item), method: :delete, class: 'pr-delete', data: { confirm: 'Are you sure?' } %>
+      </div>
     <% end %>
-  </ul>
+  <% else %>
+    <div class="pr-nonexisting">
+      there are no items in this group. add one below.
+    </div>
+  <% end %>
 </p>
 
-<%= form_for([@group, @group.items.build]) do |f| %>
+<h2 class="pr-page-header">add item to this group</h2>
+<%= form_for([@group, @group.items.build], html: {class: 'pr-form'}) do |f| %>
   <%= f.hidden_field :group_id %>
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
+  <div class="pr-form__field">
+    <%= f.text_field :name, placeholder: 'name' %>
   </div>
-  <div class="actions">
+  <div class="pr-form__submit actions">
     <%= f.submit %>
   </div>
 <% end %>
 
-<%= link_to 'Edit', edit_group_path(@group) %>
+<h2 class="pr-page-header">
+  <%= link_to 'edit this group', edit_group_path(@group) %>
+</h2>
