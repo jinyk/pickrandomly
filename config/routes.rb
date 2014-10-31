@@ -5,6 +5,8 @@ Rails.application.routes.draw do
     resources :items
   end
 
+  get 'from/:comma_separated_group' => 'groups#from'
+
   get ':group_slug/into/:numparts' => 'groups#subsets'
   get ':group_slug' => 'groups#show'
 

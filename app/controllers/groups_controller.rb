@@ -18,6 +18,10 @@ class GroupsController < ApplicationController
     @shuffled_group = @group.items.shuffle
   end
 
+  def from
+    @group = params[:comma_separated_group].split(',')
+  end
+
   # GET /groups/new
   def new
     @group = Group.new
