@@ -22,6 +22,19 @@ TODO
 
 [ ] pickrandom.ly/from?set=a,b,c,d,d,d
 
-[ ] pickrandom.ly/coolteam/into/2 ==> splits team into 2 groups
+[x] pickrandom.ly/coolteam/into/2 ==> splits team into 2 groups
 
 [ ] random movie near you using geolocation/zip/fandango
+
+[ ] pickrandom.ly/yesno
+
+[ ] pickrandom.ly/color => gives you a random color
+
+[ ] pickrandom.ly/animal => gives you a random animal
+
+[ ] pickrandom.ly/somethingthatdoesnotexist => search on amazon, and randomly pick one matching item?
+
+[ ] pickrandom.ly/dayofweek
+
+[ ] pickrandom.ly/time
+
