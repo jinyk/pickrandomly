@@ -1,12 +1,6 @@
 # pickrandom.ly
 
-TODO
-
-- [ ] add index for group.publically_listed
-
-- [ ] user accounts
-
-- [ ] caching
+## Ideas
 
 - [ ] history, don't repeat
 
@@ -37,3 +31,11 @@ TODO
 - [ ] pickrandom.ly/dayofweek
 
 - [ ] pickrandom.ly/time
+
+## Todo
+
+- [ ] add index for group.publically_listed
+
+- [ ] user accounts
+
+- [ ] caching
